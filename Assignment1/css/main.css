@@ -1,0 +1,86 @@
+body {
+    background-color: #dee3e8;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+
+/* Header */
+
+header {
+    background-color: #37474F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+h1 {
+    margin: 0;
+    padding-left: 40px; 
+}
+#h1_1 {
+    color: #FE6E3F;
+}
+#h1_2 {
+    color: #FFFFFF;
+}
+
+
+/* Indentation */
+
+h2 ~ * {
+    padding-left: 20px;
+}
+summary ~ * {
+    padding-left: 20px;
+}
+h3 ~ * {
+    padding-left: 40px;
+}
+
+
+/* Menu Selection */
+
+a {
+    color: inherit; /* This will make the link inherit the color of its parent element */
+    text-decoration: none; /* This will remove the underline from the link */
+}
+summary {
+    list-style-type: disc;
+}
+.hiddenDetails {
+    display: none;
+}
+summary:hover ~ .hiddenDetails { /* details:hover .hiddenDetails */
+    display: block;
+}
+
+
+/* Column Organization */
+
+.sections-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* For screens wider than 550px */
+@media(min-width: 550px) {
+    .sections-container {
+        flex-direction: row;
+    }
+    section {
+        width: 45%;
+        margin-right: 5%;
+    }
+}
+/* For screens narrower than 550px */
+@media(max-width: 549px) {
+    .sections-container {
+        flex-direction: column;
+    }
+    section {
+        width: 95%;
+        margin-right: 5%;
+    }
+}

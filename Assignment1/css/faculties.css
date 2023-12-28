@@ -1,0 +1,88 @@
+body {
+    background-color: #dee3e8;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+
+/* Header */
+
+header {
+    background-color: #37474F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+h1 {
+    margin: 0;
+    padding-left: 40px; 
+}
+#h1_1 {
+    color: #FE6E3F;
+}
+#h1_2 {
+    color: #FFFFFF;
+}
+
+
+/* Link Properties */
+
+a {
+    color: inherit; /* This will make the link inherit the color of its parent element */
+    text-decoration: none; /* This will remove the underline from the link */
+}
+
+
+/* Shadow Effect */
+
+section:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); 
+    transition: box-shadow 0.1s ease-in-out; /* This will add a smooth transition effect when applying the shadow */
+}
+
+
+/* Textbook Margins */
+
+main {
+    display: flex;
+    flex-wrap: wrap; /* Moves items to next row */
+    margin-left: -1%; /* Negative margin to counteract the left margin of the first column */
+    margin-right: -1%; /* Negative margin to counteract the right margin of the last column */
+    margin-bottom: 40px;
+}
+section {
+    /* Flex-grow and flex-shrink determine their 
+    proportion of the shrinking or growing relative to the rest */
+    /* flex: 1 0 23%; /* flex-grow | flex-shrink | flex-basis */
+    flex-basis: 23%;
+    margin: 1%;
+    box-sizing: border-box;
+    background-color: white;
+}
+.textbookImg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+p {
+    margin: 2em;
+    margin-bottom: 4em;
+    font-size: 0.8em;
+}
+/* Media query for window width less than or equal to 770px */
+@media (max-width: 770px) {
+    section {
+        /* flex: 1 0 48%; */
+        flex-basis: 48%;
+    }
+}
+/* Media query for window width less than or equal to 480px */
+@media (max-width: 480px) {
+    section {
+        /* flex: 1 0 98%%; */
+        flex-basis: 98%;
+    }
+}

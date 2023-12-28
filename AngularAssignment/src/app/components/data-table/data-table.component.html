@@ -1,0 +1,41 @@
+<!-- <p>data-table works!</p> -->
+
+<div class="table-responsive">
+<table class="table">
+    <button class="btn btn-danger" (click)="reloadPage()">Reload Table</button>
+    <div *ngIf="reports.length > 0">
+    <thead>
+    <tr>
+        <th scope="col" (click)="sortReports('reporter')">Reporter</th>
+        <th scope="col" (click)="sortReports('troublemaker')">Troublemaker</th>
+        <th scope="col" (click)="sortReports('location')">Location</th>
+        <th scope="col" (click)="sortReports('timeReported')">Time Reported</th>
+        <th scope="col">Details</th>
+        <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngIf="reports.length === 0">
+        <td colspan="6">No reports found</td>
+    </tr>
+    <tr *ngIf="reports.length > 0">
+        <td colspan="2">Total reports: {{ reports.length }}</td>
+        <td colspan="4">Reload page to see new entries.</td>
+    </tr>
+    <tr *ngFor="let report of reports">
+        <!-- the data table table loads before http.get is completed in the service -->
+        <td>{{ reports.length }}</td> <!--Replace reports.length (this helps it load more) with report.reporterInfo.name -->
+        <td>{{ report.troublemakerName }}</td>
+        <td>{{ report.location }}</td>
+        <td>{{ report.timeDate | date }}</td>
+        <td id="details">Hover to view</td>
+        <td><button class="btn btn-danger" (click)="deleteReport(report)">Delete</button></td>
+        <app-report-details id="report-details" [report]="report"></app-report-details>
+    </tr>
+    
+    </tbody>
+    </div>
+</table>
+<!-- <app-report-form (reportSubmitted)="loadReports"></app-report-form> -->
+</div>
+  

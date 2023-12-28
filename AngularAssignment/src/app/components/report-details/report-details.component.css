@@ -1,0 +1,22 @@
+#details-container {
+  background-color: #ccc;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  right: 0;
+  bottom: 35%;
+  margin: 30px;
+  border-radius: 8px; 
+}
+
+.report-details {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+  
+.report-details h2 {
+  margin-bottom: 20px;
+}
+  

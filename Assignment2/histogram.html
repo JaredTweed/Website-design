@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histogram Generator</title>
+    <link rel="stylesheet" href="./histogram.css">
+    <script type="text/javascript" src="./calculate.js" defer></script>
+</head>
+<body>
+    <main class="wrapper">
+        <section class="header" onload="init()">
+            <h1>Histogram Generator</h1>
+            <input id="file-input" type="file">
+        </section>
+        <div class="content">
+            <section id="lower-bounds">
+                <h2>Lower bounds</h2>
+                <div class="data">
+                    <p>Max</p>
+                    <p id="max-bound">100.0</p>
+                    <p>A+</p>
+                    <input type="number" min="0" max="100" step="0.1" value="95.0">
+                    <p>A</p>
+                    <input type="number" min="0" max="100" step="0.1" value="90.0">
+                    <p>A-</p>
+                    <input type="number" min="0" max="100" step="0.1" value="85.0">
+                    <p>B+</p>
+                    <input type="number" min="0" max="100" step="0.1" value="80.0">
+                    <p>B</p>
+                    <input type="number" min="0" max="100" step="0.1" value="75.0">
+                    <p>B-</p>
+                    <input type="number" min="0" max="100" step="0.1" value="70.0">
+                    <p>C+</p>
+                    <input type="number" min="0" max="100" step="0.1" value="65.0">
+                    <p>C</p>
+                    <input type="number" min="0" max="100" step="0.1" value="60.0">
+                    <p>C-</p>
+                    <input type="number" min="0" max="100" step="0.1" value="55.0">
+                    <p>D</p>
+                    <input type="number" min="0" max="100" step="0.1" value="50.0">
+                    <p>F</p>
+                    <input type="number" min="0" max="100" step="0.1" value="0.0">
+                </div>
+                <div id="button"><button id="update-button">Update</button></div>
+            </section>
+            <section id="histogram">
+                <h2>Histogram</h2>
+                <p id="error-message">* Upload file to analyze data.</p>
+                <div class="data">
+                    <p>A+</p>
+                    <div class="histogramResults"></div>
+                    <p>A</p>
+                    <div class="histogramResults"></div>
+                    <p>A-</p>
+                    <div class="histogramResults"></div>
+                    <p>B+</p>
+                    <div class="histogramResults"></div>
+                    <p>B</p>
+                    <div class="histogramResults"></div>
+                    <p>B-</p>
+                    <div class="histogramResults"></div>
+                    <p>C+</p>
+                    <div class="histogramResults"></div>
+                    <p>C</p>
+                    <div class="histogramResults"></div>
+                    <p>C-</p>
+                    <div class="histogramResults"></div>
+                    <p>D</p>
+                    <div class="histogramResults"></div>
+                    <p>F</p>
+                    <div class="histogramResults"></div>
+                </div>
+            </section>
+            <section id="stats">
+                <h2>Stats</h2>
+                <div class="data">
+                    <p>Highest</p>
+                    <p id="high">Name (percent)</p>
+                    <p>Lowest</p>
+                    <p id="low">Name (percent)</p>
+                    <p>Mean</p>
+                    <p id="mean">Grade</p>
+                    <p>Median</p>
+                    <p id="median">Grade</p>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

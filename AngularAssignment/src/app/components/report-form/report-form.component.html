@@ -1,0 +1,21 @@
+<!-- <p>report-form works!</p> -->
+<div class="report-form-container">
+    <form [formGroup]="reportForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="reportingPersonInfo">
+            <input formControlName="name" type="text" placeholder="Your Name" />
+            <input formControlName="phoneNumber" type="text" placeholder="Your Phone Number" />
+        </div>
+        <input formControlName="troublemakerName" type="text" placeholder="Troublemaker's Name" />
+        <div formGroupName="location">
+            <input formControlName="placeName" type="text" placeholder="Location Name" list="locations" />
+            <datalist id="locations">
+                <option *ngFor="let l of locationsList" [value]="l.name">{{ l.name }}</option>
+            </datalist>
+            <input formControlName="longitude" type="text" placeholder="Longitude" />
+            <input formControlName="latitude" type="text" placeholder="Latitude" />
+        </div>
+        <input formControlName="pictureLink" type="text" placeholder="Picture Link (optional)" />
+        <textarea formControlName="extraInfo" placeholder="Extra Information (optional)"></textarea>
+        <button type="submit">Submit Report</button>
+    </form>
+</div>
