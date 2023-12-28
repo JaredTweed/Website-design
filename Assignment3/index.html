@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript"; src="./typescript.js" defer></script>
+    <style>
+        table, th, td {
+          border: 1px solid;
+          border-collapse: collapse;
+        }
+        th, td {padding: 3px;}
+        input, table, select, label {
+            margin: 3px;
+        }
+        label, input {
+            display: inline-block;
+            width: 150px;
+        }
+        select, #submit {width: 318px;}
+        .grey-input, .chestnut-input, .white-input, .black-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <table id="pigTable">
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Info</th>
+            <th>Delete</th>
+        </tr>
+    </table>
+
+    
+    <form action="">
+        <fieldset>
+            <legend>Add Pig</legend>
+            <label>Name:</label>
+            <input type="text" placeholder="Porky" id="name-data" required> <br>
+            <label>Weight (in stones):</label>
+            <input type="number" placeholder="20" id="weight-data" min="1"> <br>
+            <label>Height (in hocks):</label>
+            <input type="number" placeholder="10" id="height-data" min="1"> <br>
+            <label>Personality:</label>
+            <input type="text" placeholder="Fair" id="personality-data"> <br>
+            
+            <select id="category">
+                <optgroup label="Category">
+                    <option value="Grey">Grey Pig</option>
+                    <option value="Chestnut">Chestnut Pig</option>
+                    <option value="White">White Pig</option>
+                    <option value="Black">Black Pig</option>
+                </optgroup>
+            </select>
+            <br>
+            
+            <label class="grey-input" for="swimming-data">Swimming ability:</label>
+            <input type="number" class="grey-input" id="swimming-data" min="0" max="100" placeholder="0-100">
+            <label class="chestnut-input" for="language-data">Language:</label>
+            <input type="text" class="chestnut-input" id="language-data" placeholder="English">
+            <label class="white-input" for="speed-data">Speed:</label>
+            <input type="number" class="white-input" id="speed-data" min="0" max="100" placeholder="0-100">
+            <label class="black-input" for="strength-data">Strength:</label> 
+            <input type="number" class="black-input" id="strength-data" min="0" max="10" placeholder="0-10">
+                        
+            <br>
+            <input type="submit" value="Add" id="submit">
+        </fieldset>
+    </form>
+</body>
